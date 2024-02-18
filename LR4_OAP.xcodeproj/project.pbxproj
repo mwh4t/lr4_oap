@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF08FB392B829B340046FCF1 /* placement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF08FB382B829B340046FCF1 /* placement.cpp */; };
+		AF0FFDD22B7F9D81007815B1 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF0FFDD02B7F9D81007815B1 /* board.cpp */; };
 		AF774AC12B7B65E800D38258 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF774AC02B7B65E800D38258 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF08FB382B829B340046FCF1 /* placement.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = placement.cpp; sourceTree = "<group>"; };
+		AF0FFDD02B7F9D81007815B1 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
+		AF0FFDD12B7F9D81007815B1 /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
 		AF774ABD2B7B65E800D38258 /* LR4_OAP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LR4_OAP; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF774AC02B7B65E800D38258 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF0FFDCF2B7F9CF3007815B1 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				AF0FFDD12B7F9D81007815B1 /* functions.hpp */,
+				AF0FFDD02B7F9D81007815B1 /* board.cpp */,
+				AF08FB382B829B340046FCF1 /* placement.cpp */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 		AF774AB42B7B65E800D38258 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +73,7 @@
 		AF774ABF2B7B65E800D38258 /* LR4_OAP */ = {
 			isa = PBXGroup;
 			children = (
+				AF0FFDCF2B7F9CF3007815B1 /* other */,
 				AF774AC02B7B65E800D38258 /* main.cpp */,
 			);
 			path = LR4_OAP;
@@ -121,6 +137,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF774AC12B7B65E800D38258 /* main.cpp in Sources */,
+				AF08FB392B829B340046FCF1 /* placement.cpp in Sources */,
+				AF0FFDD22B7F9D81007815B1 /* board.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
