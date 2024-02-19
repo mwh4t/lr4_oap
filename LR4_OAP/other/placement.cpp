@@ -27,7 +27,7 @@ bool isValidPlacement(std::string& v1, std::string& v2, std::string& v3, std::st
 void placementFunc() {
     std::string v1, v2, v3, v4;
 
-    std::cout << "Введите расположение 4-ёх 1-палубных кораблей:" << std::endl;
+    std::cout << "\nВведите расположение 4-ёх 1-палубных кораблей:" << std::endl;
 
     std::cin >> v1 >> v2 >> v3 >> v4;
 

@@ -2,14 +2,17 @@
 #include <cstdlib>
 //#include <unistd.h>
 
-int main() {
+int main() { // ■ × •
     system("clear");
     
 //    int sec = 1000000;
     
+    // функция доски игрока
     boardFunc();
     
 //    usleep(1 * sec);
+    
+    // функция хода игрока
     placementFunc();
     
     return 0;

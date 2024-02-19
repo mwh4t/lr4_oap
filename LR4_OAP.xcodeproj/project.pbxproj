@@ -30,6 +30,10 @@
 		AF0FFDD12B7F9D81007815B1 /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
 		AF774ABD2B7B65E800D38258 /* LR4_OAP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LR4_OAP; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF774AC02B7B65E800D38258 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AFA8A6982B83EA7A00A19CC7 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		AFA8A6992B83EAC400A19CC7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AFA8A69A2B83EB8800A19CC7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AFA8A69B2B83EE0E00A19CC7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		AF0FFDCF2B7F9CF3007815B1 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				AFA8A6972B83EA3600A19CC7 /* include */,
+				AFA8A69B2B83EE0E00A19CC7 /* data.json */,
 				AF0FFDD12B7F9D81007815B1 /* functions.hpp */,
 				AF0FFDD02B7F9D81007815B1 /* board.cpp */,
 				AF08FB382B829B340046FCF1 /* placement.cpp */,
@@ -56,6 +62,8 @@
 		AF774AB42B7B65E800D38258 = {
 			isa = PBXGroup;
 			children = (
+				AFA8A69A2B83EB8800A19CC7 /* .gitignore */,
+				AFA8A6992B83EAC400A19CC7 /* README.md */,
 				AF774ABF2B7B65E800D38258 /* LR4_OAP */,
 				AF774ABE2B7B65E800D38258 /* Products */,
 			);
@@ -77,6 +85,14 @@
 				AF774AC02B7B65E800D38258 /* main.cpp */,
 			);
 			path = LR4_OAP;
+			sourceTree = "<group>";
+		};
+		AFA8A6972B83EA3600A19CC7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AFA8A6982B83EA7A00A19CC7 /* json.hpp */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
