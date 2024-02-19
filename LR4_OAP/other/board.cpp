@@ -14,5 +14,7 @@ void boardFunc() {
     std::string r10 = "10 □ □ □ □ □ □ □ □ □ □\n";
     
     std::cout << "Ваша доска:" << std::endl;
-    std::cout << "   A B C D E F G H I J\n" << r1 << r2 << r3 << r4 << r5 << r6 << r7 << r8 << r9 << r10 << std::endl;
+    std::cout << "   A B C D E F G H I J\n";
+    std::cout << r1 << r2 << r3 << r4 << r5 << r6 << r7 << r8 << r9 << r10 << std::endl;
+
 }
