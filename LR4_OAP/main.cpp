@@ -5,6 +5,9 @@
 int main() { // ■ × •
     system("clear");
     
+    // функция для загрузки данных в json
+    jsonLoaderFunc();
+    
 //    int sec = 1000000;
     
     // функция доски игрока
