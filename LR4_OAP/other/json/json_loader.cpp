@@ -39,7 +39,7 @@ void jsonLoaderFunc() {
     }
     
     // записывание json в файл
-    std::ofstream file("/Users/matthewkorzunov/Desktop/Учёба/Колледж/2 курс/2 семестр/ОАП/ЛР 4 ОАП/LR4_OAP/LR4_OAP/other/data.json");
+    std::ofstream file("/Users/matthewkorzunov/Desktop/Учёба/Колледж/2 курс/2 семестр/ОАП/ЛР 4 ОАП/LR4_OAP/LR4_OAP/other/json/data.json");
     file << std::setw(4) << data << std::endl;
     file.close();
 }
