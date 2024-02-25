@@ -15,27 +15,27 @@ void jsonLoaderFunc() {
         "J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10"
     };
     
-    std::vector<std::string> rows = {
-        " 1 □ □ □ □ □ □ □ □ □ □",
-        " 2 □ □ □ □ □ □ □ □ □ □",
-        " 3 □ □ □ □ □ □ □ □ □ □",
-        " 4 □ □ □ □ □ □ □ □ □ □",
-        " 5 □ □ □ □ □ □ □ □ □ □",
-        " 6 □ □ □ □ □ □ □ □ □ □",
-        " 7 □ □ □ □ □ □ □ □ □ □",
-        " 8 □ □ □ □ □ □ □ □ □ □",
-        " 9 □ □ □ □ □ □ □ □ □ □",
-        "10 □ □ □ □ □ □ □ □ □ □"
+    std::vector<std::string> board = {
+        "Ваша доска:           ",
+        "   A B C D E F G H I J",
+        " 1                    ",
+        " 2                    ",
+        " 3                    ",
+        " 4                    ",
+        " 5                    ",
+        " 6                    ",
+        " 7                    ",
+        " 8                    ",
+        " 9                    ",
+        "10                    "
     };
     
     json data;
     
     // добавление данных
     data["validValues"] = validValues;
-    data["urBoard"] = "Ваша доска:";
-    data["letters"] = "   A B C D E F G H I J";
-    for (const auto& row : rows) {
-        data["rows"].push_back(row);
+    for (const auto& row : board) {
+        data["board"].push_back(row);
     }
     
     // записывание json в файл

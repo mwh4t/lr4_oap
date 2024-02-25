@@ -1,6 +1,7 @@
 #ifndef functions_hpp
 #define functions_hpp
 
+#include <locale.h>
 #include "include/json.hpp"
 #include <iostream>
 #include <fstream>
