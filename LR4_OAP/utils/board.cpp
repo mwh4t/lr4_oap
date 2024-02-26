@@ -1,10 +1,11 @@
 #include "functions.hpp"
 
 void boardFunc() {
-    json data;
-    
     // парс данных из json
     json loadedData = jsonParserFunc();
+    
+    // очистка терминала
+    clsFunc();
     
     // вывод данных
     for (const auto& row : loadedData["board"]) {
