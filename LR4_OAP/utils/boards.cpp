@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-void boardFunc() {
+void boardsFunc() {
     // парс данных из json
     json loadedData = jsonParserFunc();
     
@@ -8,7 +8,7 @@ void boardFunc() {
     clsFunc();
     
     // вывод данных
-    for (const auto& row : loadedData["board"]) {
+    for (const auto& row : loadedData["boards"]) {
         std::cout << row.get<std::string>() << std::endl;
     }
 }

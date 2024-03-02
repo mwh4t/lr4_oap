@@ -17,7 +17,7 @@ void jsonSaverFunc(const json& data);
 json jsonParserFunc();
 
 void clsFunc();
-void boardFunc();
+void boardsFunc();
 void placementFunc();
 
 #endif

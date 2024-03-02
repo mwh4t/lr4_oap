@@ -5,8 +5,8 @@ int main() { // ■ × •
     // функция для загрузки данных в json
     jsonLoaderFunc();
     
-    // функция доски игрока
-    boardFunc();
+    // функция печати досок
+    boardsFunc();
     
 //    int sec = 1000000;
 //    usleep(1 * sec);

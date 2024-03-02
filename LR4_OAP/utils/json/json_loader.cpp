@@ -30,7 +30,7 @@ void jsonLoaderFunc() {
         {"J7", {8, 21}}, {"J8", {9, 21}}, {"J9", {10, 21}}, {"J10", {11, 21}}
     };
     
-    std::vector<std::string> board = {
+    std::vector<std::string> boards = {
         "Ваша доска:                               Доска противника:     ",
         "   A B C D E F G H I J                       A B C D E F G H I J",
         " 1                                         1                    ",
@@ -49,8 +49,8 @@ void jsonLoaderFunc() {
     
     // добавление данных
     data["validValues"] = validValues;
-    for (const auto& row : board) {
-        data["board"].push_back(row);
+    for (const auto& row : boards) {
+        data["boards"].push_back(row);
     }
     
     jsonSaverFunc(data);

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF08FB392B829B340046FCF1 /* placement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF08FB382B829B340046FCF1 /* placement.cpp */; };
-		AF0FFDD22B7F9D81007815B1 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF0FFDD02B7F9D81007815B1 /* board.cpp */; };
+		AF0FFDD22B7F9D81007815B1 /* boards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF0FFDD02B7F9D81007815B1 /* boards.cpp */; };
 		AF5C8B0A2B8A8405000588E7 /* json_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF5C8B092B8A8405000588E7 /* json_loader.cpp */; };
 		AF5C8B0D2B8A9077000588E7 /* json_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF5C8B0B2B8A9077000588E7 /* json_handler.cpp */; };
 		AF774AC12B7B65E800D38258 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF774AC02B7B65E800D38258 /* main.cpp */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		AF08FB382B829B340046FCF1 /* placement.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = placement.cpp; sourceTree = "<group>"; };
-		AF0FFDD02B7F9D81007815B1 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
+		AF0FFDD02B7F9D81007815B1 /* boards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = boards.cpp; sourceTree = "<group>"; };
 		AF0FFDD12B7F9D81007815B1 /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
 		AF5C8B092B8A8405000588E7 /* json_loader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = json_loader.cpp; sourceTree = "<group>"; };
 		AF5C8B0B2B8A9077000588E7 /* json_handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = json_handler.cpp; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 				AF5C8B0E2B8A95AD000588E7 /* json */,
 				AF0FFDD12B7F9D81007815B1 /* functions.hpp */,
 				AF8282142B8D249700920D93 /* clear_screen.cpp */,
-				AF0FFDD02B7F9D81007815B1 /* board.cpp */,
+				AF0FFDD02B7F9D81007815B1 /* boards.cpp */,
 				AF08FB382B829B340046FCF1 /* placement.cpp */,
 			);
 			path = utils;
@@ -174,7 +174,7 @@
 				AF774AC12B7B65E800D38258 /* main.cpp in Sources */,
 				AF8282152B8D249700920D93 /* clear_screen.cpp in Sources */,
 				AF08FB392B829B340046FCF1 /* placement.cpp in Sources */,
-				AF0FFDD22B7F9D81007815B1 /* board.cpp in Sources */,
+				AF0FFDD22B7F9D81007815B1 /* boards.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
