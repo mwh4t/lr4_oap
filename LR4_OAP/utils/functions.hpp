@@ -18,6 +18,7 @@ json jsonParserFunc();
 
 void clsFunc();
 void boardsFunc();
+std::map<std::string, std::pair<int, int>> deleteCellsFunc(const json& loadedData, const std::string& value);
 void placementFunc();
 
 #endif

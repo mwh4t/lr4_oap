@@ -1,6 +1,9 @@
 #include "functions.hpp"
 
 void boardsFunc() {
+    /*
+     функция для вывода досок в терминал
+     */
     // парс данных из json
     json loadedData = jsonParserFunc();
     

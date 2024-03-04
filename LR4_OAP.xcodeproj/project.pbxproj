@@ -13,6 +13,7 @@
 		AF5C8B0D2B8A9077000588E7 /* json_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF5C8B0B2B8A9077000588E7 /* json_handler.cpp */; };
 		AF774AC12B7B65E800D38258 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF774AC02B7B65E800D38258 /* main.cpp */; };
 		AF8282152B8D249700920D93 /* clear_screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF8282142B8D249700920D93 /* clear_screen.cpp */; };
+		AFEBC1BC2B966394005A8769 /* delete_cells.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFEBC1BB2B966394005A8769 /* delete_cells.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		AFA8A6992B83EAC400A19CC7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AFA8A69A2B83EB8800A19CC7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AFA8A69B2B83EE0E00A19CC7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		AFEBC1BB2B966394005A8769 /* delete_cells.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = delete_cells.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				AF0FFDD12B7F9D81007815B1 /* functions.hpp */,
 				AF8282142B8D249700920D93 /* clear_screen.cpp */,
 				AF0FFDD02B7F9D81007815B1 /* boards.cpp */,
+				AFEBC1BB2B966394005A8769 /* delete_cells.cpp */,
 				AF08FB382B829B340046FCF1 /* placement.cpp */,
 			);
 			path = utils;
@@ -173,6 +176,7 @@
 				AF5C8B0D2B8A9077000588E7 /* json_handler.cpp in Sources */,
 				AF774AC12B7B65E800D38258 /* main.cpp in Sources */,
 				AF8282152B8D249700920D93 /* clear_screen.cpp in Sources */,
+				AFEBC1BC2B966394005A8769 /* delete_cells.cpp in Sources */,
 				AF08FB392B829B340046FCF1 /* placement.cpp in Sources */,
 				AF0FFDD22B7F9D81007815B1 /* boards.cpp in Sources */,
 			);

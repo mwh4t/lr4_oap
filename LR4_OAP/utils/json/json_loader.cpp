@@ -1,6 +1,9 @@
 #include "functions.hpp"
 
 void jsonLoaderFunc() {
+    /*
+     функция, содержащая все необходимые данные для выгрузки в json-файл
+     */
     // список допустимых значений
     std::map<std::string, std::pair<int, int>> validValues = {
         {"A1", {2, 3}}, {"A2", {3, 3}}, {"A3", {4, 3}}, {"A4", {5, 3}},
