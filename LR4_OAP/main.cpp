@@ -14,5 +14,8 @@ int main() { // ■ × •
     // функция хода игрока
     placementFunc();
     
+    // функция ходов
+//    matchFunc();
+    
     return 0;
 }

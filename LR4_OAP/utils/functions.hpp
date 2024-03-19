@@ -4,6 +4,7 @@
 #include "include/json.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <vector>
 #include <set>
@@ -18,7 +19,10 @@ json jsonParserFunc();
 
 void clsFunc();
 void boardsFunc();
-std::map<std::string, std::pair<int, int>> deleteCellsFunc(const json& loadedData, const std::string& value);
+std::map<std::string, std::pair<int, int>> deleteCellsFunc(std::map<std::string, std::pair<int, int>>& validValues, const std::string& value);
 void placementFunc();
+void invalidDirection();
+std::string elementGeneration();
+void matchFunc();
 
 #endif

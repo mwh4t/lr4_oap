@@ -4,5 +4,5 @@ void clsFunc() {
     /*
      функция для очистки терминала
      */
-    std::cout << std::string(20, '\n');
+    std::cout << std::string(50, '\n');
 }
