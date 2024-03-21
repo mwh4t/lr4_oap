@@ -80,6 +80,10 @@ void jsonLoaderFunc() {
         "10                                        10                    "
     };
     
+    std::vector<std::string> playerMoves = {};
+    
+    std::vector<int> botMoves = {};
+    
     json data;
     
     // добавление данных
@@ -89,6 +93,8 @@ void jsonLoaderFunc() {
     for (const auto& row : boards) {
         data["boards"].push_back(row);
     }
+    data["playerMoves"] = playerMoves;
+    data["botMoves"] = botMoves;
     
     jsonSaverFunc(data);
 }

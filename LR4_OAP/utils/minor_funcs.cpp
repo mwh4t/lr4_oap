@@ -18,3 +18,13 @@ std::string elementGeneration() {
 
     return value;
 }
+
+char directionGeneration() {
+    /*
+     Функция для генерации случайного нарпавления
+     */
+    char letters[] = {'u', 'd', 'r', 'l'};
+    char direction = letters[rand() % 4];
+
+    return direction;
+}

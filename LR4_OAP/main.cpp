@@ -5,9 +5,6 @@ int main() { // ■ × •
     // функция для загрузки данных в json
     jsonLoaderFunc();
     
-    // функция печати досок
-    boardsFunc();
-    
 //    int sec = 1000000;
 //    usleep(1 * sec);
     
@@ -15,7 +12,7 @@ int main() { // ■ × •
     placementFunc();
     
     // функция ходов
-//    matchFunc();
+    matchFunc();
     
     return 0;
 }

@@ -1,5 +1,281 @@
 #include "functions.hpp"
 
+void botPlacementFunc() {
+    /*
+     функция, позволяющая рандомно расположить корабли для бота
+     */
+    json loadedData = jsonParserFunc();
+    
+    srand(static_cast<unsigned int>(time(nullptr)));
+    
+    for (int i = 0; i < 4; ) {
+        std::string value = elementGeneration();
+        
+        if (loadedData["botValidValues"].contains(value)) {
+            std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
+            std::vector<int> coordinates = loadedData["botValidValues"][value].get<std::vector<int>>();
+            
+            int row = coordinates[0];
+            int col = coordinates[1];
+            
+            loadedBoard[row][col] = '#';
+            
+            loadedData["boards"].clear();
+            
+            std::map<std::string, std::pair<int, int>> validValues = loadedData["botValidValues"];
+            std::map<std::string, std::pair<int, int>> validValues1 = deleteCellsFunc(validValues, value);
+            
+            std::vector<std::string> botMoves = {std::to_string(row) + " " + std::to_string(col)};
+            
+            loadedData["botValidValues"] = validValues1;
+            for (const auto& row : loadedBoard) {
+                loadedData["boards"].push_back(row);
+            }
+            loadedData["botMoves"].push_back(botMoves);
+            
+            jsonSaverFunc(loadedData);
+            
+            i++;
+        } else continue;
+    }
+    
+    for (int i = 0; i < 3; ) {
+        std::string value = elementGeneration();
+        
+        if (loadedData["botValidValues"].contains(value)) {
+            std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
+            std::vector<int> coordinates = loadedData["botValidValues"][value].get<std::vector<int>>();
+            
+            int row = coordinates[0];
+            int col = coordinates[1];
+            
+            loadedBoard[row][col] = '#';
+            
+            char direction = directionGeneration();
+            
+            std::string value1 = value;
+            switch (direction) {
+                case 'u':
+                    value1.back()--;
+                    if (loadedData["botValidValues"].contains(value1)) {
+                        row--;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'd':
+                    value1.back()++;
+                    if (loadedData["botValidValues"].contains(value1)) {
+                        row++;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'r':
+                    value1.front()++;
+                    if (loadedData["botValidValues"].contains(value1)) {
+                        col += 2;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'l':
+                    value1.front()--;
+                    if (loadedData["botValidValues"].contains(value1)) {
+                        col -= 2;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+            }
+
+            loadedData["boards"].clear();
+            
+            // удаление клеток вокруг выбранной из json
+            std::map<std::string, std::pair<int, int>> validValues = loadedData["botValidValues"];
+            std::map<std::string, std::pair<int, int>> validValues1 = deleteCellsFunc(validValues, value);
+            std::map<std::string, std::pair<int, int>> validValues2 = deleteCellsFunc(validValues1, value1);
+            
+            loadedData["botValidValues"] = validValues2;
+            for (const auto& row : loadedBoard) {
+                loadedData["boards"].push_back(row);
+            }
+            
+            jsonSaverFunc(loadedData);
+            
+            i++;
+        } else continue;
+    }
+    
+    for (int i = 0; i < 2; ) {
+        std::string value = elementGeneration();
+        
+        if (loadedData["botValidValues"].contains(value)) {
+            std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
+            std::vector<int> coordinates = loadedData["botValidValues"][value].get<std::vector<int>>();
+            
+            int row = coordinates[0];
+            int col = coordinates[1];
+            
+            loadedBoard[row][col] = '#';
+            
+            char direction = directionGeneration();
+            
+            std::string value1 = value;
+            std::string value2 = value1;
+            switch (direction) {
+                case 'u':
+                    value1.back()--;
+                    value2.back() -= 2;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2)) {
+                        row--;
+                        loadedBoard[row][col] = '#';
+                        row--;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'd':
+                    value1.back()++;
+                    value2.back() += 2;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2)) {
+                        row++;
+                        loadedBoard[row][col] = '#';
+                        row++;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'r':
+                    value1.front()++;
+                    value2.front() += 2;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2)) {
+                        col += 2;
+                        loadedBoard[row][col] = '#';
+                        col += 2;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'l':
+                    value1.front()--;
+                    value2.front() -= 2;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2)) {
+                        col -= 2;
+                        loadedBoard[row][col] = '#';
+                        col -= 2;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+            }
+
+            loadedData["boards"].clear();
+            
+            // удаление клеток вокруг выбранной из json
+            std::map<std::string, std::pair<int, int>> validValues = loadedData["botValidValues"];
+            std::map<std::string, std::pair<int, int>> validValues1 = deleteCellsFunc(validValues, value);
+            std::map<std::string, std::pair<int, int>> validValues2 = deleteCellsFunc(validValues1, value1);
+            std::map<std::string, std::pair<int, int>> validValues3 = deleteCellsFunc(validValues2, value2);
+            
+            loadedData["botValidValues"] = validValues3;
+            for (const auto& row : loadedBoard) {
+                loadedData["boards"].push_back(row);
+            }
+            
+            jsonSaverFunc(loadedData);
+            
+            i++;
+        } else continue;
+    }
+    
+    for (int i = 0; i < 1; ) {
+        std::string value = elementGeneration();
+        
+        if (loadedData["botValidValues"].contains(value)) {
+            std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
+            std::vector<int> coordinates = loadedData["botValidValues"][value].get<std::vector<int>>();
+            
+            int row = coordinates[0];
+            int col = coordinates[1];
+            
+            loadedBoard[row][col] = '#';
+            
+            char direction = directionGeneration();
+            
+            std::string value1 = value;
+            std::string value2 = value1;
+            std::string value3 = value2;
+            switch (direction) {
+                case 'u':
+                    value1.back()--;
+                    value2.back() -= 2;
+                    value3.back() -= 3;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2) && loadedData["botValidValues"].contains(value3)) {
+                        row--;
+                        loadedBoard[row][col] = '#';
+                        row--;
+                        loadedBoard[row][col] = '#';
+                        row--;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'd':
+                    value1.back()++;
+                    value2.back() += 2;
+                    value3.back() += 3;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2) && loadedData["botValidValues"].contains(value3)) {
+                        row++;
+                        loadedBoard[row][col] = '#';
+                        row++;
+                        loadedBoard[row][col] = '#';
+                        row++;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'r':
+                    value1.front()++;
+                    value2.front() += 2;
+                    value3.front() += 3;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2) && loadedData["botValidValues"].contains(value3)) {
+                        col += 2;
+                        loadedBoard[row][col] = '#';
+                        col += 2;
+                        loadedBoard[row][col] = '#';
+                        col += 2;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+                case 'l':
+                    value1.front()--;
+                    value2.front() -= 2;
+                    value3.front() -= 3;
+                    if (loadedData["botValidValues"].contains(value1) && loadedData["botValidValues"].contains(value2) && loadedData["botValidValues"].contains(value3)) {
+                        col -= 2;
+                        loadedBoard[row][col] = '#';
+                        col -= 2;
+                        loadedBoard[row][col] = '#';
+                        col -= 2;
+                        loadedBoard[row][col] = '#';
+                    } else continue;
+                    break;
+            }
+
+            loadedData["boards"].clear();
+            
+            // удаление клеток вокруг выбранной из json
+            std::map<std::string, std::pair<int, int>> validValues = loadedData["botValidValues"];
+            std::map<std::string, std::pair<int, int>> validValues1 = deleteCellsFunc(validValues, value);
+            std::map<std::string, std::pair<int, int>> validValues2 = deleteCellsFunc(validValues1, value1);
+            std::map<std::string, std::pair<int, int>> validValues3 = deleteCellsFunc(validValues2, value2);
+            std::map<std::string, std::pair<int, int>> validValues4 = deleteCellsFunc(validValues3, value3);
+            
+            loadedData["botValidValues"] = validValues4;
+            for (const auto& row : loadedBoard) {
+                loadedData["boards"].push_back(row);
+            }
+            
+            jsonSaverFunc(loadedData);
+            
+            i++;
+        } else continue;
+    }
+    
+    boardsFunc();
+}
+
 void singleDeckPlacementFunc() {
     /*
      функция, позволяющая расположить 1-палубные корабли # на доске
@@ -117,7 +393,6 @@ void twoDeckPlacementFunc() {
                     break;
                 case 'l':
                     value1.front()--;
-                    std::cout << value << std::endl;
                     if (loadedData["playerValidValues"].contains(value1)) {
                         col -= 2;
                         loadedBoard[row][col] = '#';
@@ -410,60 +685,10 @@ void fourDeckPlacementFunc() {
     }
 }
 
-void botPlacementFunc() {
-    /*
-     функция, позволяющая рандомно расположить корабли для бота
-     */
-    json loadedData = jsonParserFunc();
-    
-    srand(static_cast<unsigned int>(time(nullptr)));
-    
-    for (int i = 0; i < 4; ) {
-        std::string value = elementGeneration();
-        
-        if (loadedData["botValidValues"].contains(value)) {
-            std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
-            std::vector<int> coordinates = loadedData["botValidValues"][value].get<std::vector<int>>();
-            
-            int row = coordinates[0];
-            int col = coordinates[1];
-            
-            loadedBoard[row][col] = '#';
-            
-            loadedData["boards"].clear();
-            
-            std::map<std::string, std::pair<int, int>> validValues = loadedData["botValidValues"];
-            std::map<std::string, std::pair<int, int>> validValues1 = deleteCellsFunc(validValues, value);
-            
-            loadedData["botValidValues"] = validValues1;
-            for (const auto& row : loadedBoard) {
-                loadedData["boards"].push_back(row);
-            }
-            
-            jsonSaverFunc(loadedData);
-            
-            boardsFunc();
-            
-            i++;
-        } else continue;
-    }
-    
-    for (int i = 0; i < 3; ) {
-        std::string value = elementGeneration();
-        
-        if (loadedData["botValidValues"].contains(value)) {
-            std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
-            std::vector<int> coordinates = loadedData["botValidValues"][value].get<std::vector<int>>();
-            
-            
-        } else continue;
-    }
-}
-
 void placementFunc() {
+    botPlacementFunc();
 //    singleDeckPlacementFunc();
 //    twoDeckPlacementFunc();
 //    threeDeckPlacementFunc();
 //    fourDeckPlacementFunc();
-    botPlacementFunc();
 }

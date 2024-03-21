@@ -23,6 +23,7 @@ std::map<std::string, std::pair<int, int>> deleteCellsFunc(std::map<std::string,
 void placementFunc();
 void invalidDirection();
 std::string elementGeneration();
+char directionGeneration();
 void matchFunc();
 
 #endif
