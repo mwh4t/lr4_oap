@@ -25,7 +25,7 @@ void botPlacementFunc() {
             std::map<std::string, std::pair<int, int>> validValues = loadedData["botValidValues"];
             std::map<std::string, std::pair<int, int>> validValues1 = deleteCellsFunc(validValues, value);
             
-            std::vector<std::string> botMoves = {std::to_string(row) + " " + std::to_string(col)};
+            std::pair<int, int> botMoves = {row, col};
             
             loadedData["botValidValues"] = validValues1;
             for (const auto& row : loadedBoard) {

@@ -1,7 +1,7 @@
 #include "utils/functions.hpp"
 //#include <unistd.h>
 
-int main() { // ■ × •
+int main() {
     // функция для загрузки данных в json
     jsonLoaderFunc();
     
