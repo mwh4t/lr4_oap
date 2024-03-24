@@ -4,6 +4,7 @@
 #include "include/json.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <unistd.h>
 #include <sstream>
 #include <fstream>
 #include <vector>

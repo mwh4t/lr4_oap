@@ -4,6 +4,21 @@ void jsonLoaderFunc() {
     /*
      функция, содержащая все необходимые данные для выгрузки в json-файл
      */
+    std::vector<std::string> boards = {
+        "Ваша доска:                               Доска противника:     ",
+        "   A B C D E F G H I J                       A B C D E F G H I J",
+        " 1                                         1                    ",
+        " 2                                         2                    ",
+        " 3                                         3                    ",
+        " 4                                         4                    ",
+        " 5                                         5                    ",
+        " 6                                         6                    ",
+        " 7                                         7                    ",
+        " 8                                         8                    ",
+        " 9                                         9                    ",
+        "10                                        10                    "
+    };
+    
     // список всех значений
     std::map<std::string, std::pair<std::pair<int, int>, std::pair<int, int>>> values = {
         {"A1", {{2, 3}, {2, 45}}}, {"A2", {{3, 3}, {3, 45}}}, {"A3", {{4, 3}, {4, 45}}}, {"A4", {{5, 3}, {5, 45}}},
@@ -33,30 +48,21 @@ void jsonLoaderFunc() {
         {"J7", {{8, 21}, {8, 63}}}, {"J8", {{9, 21}, {9, 63}}}, {"J9", {{10, 21}, {10, 63}}}, {"J10", {{11, 21}, {11, 63}}}
     };
     
-    // список допустимых значений для бота
-    std::map<std::string, std::pair<int, int>> botValidValues;
     // список допустимых значений для игрока
     std::map<std::string, std::pair<int, int>> playerValidValues;
+    // список допустимых значений для бота
+    std::map<std::string, std::pair<int, int>> botValidValues;
+    // список допустимых значений для для хода бота
+    std::map<std::string, std::pair<int, int>> playerMovesValidValues;
+    // список допустимых значений для для хода бота
+    std::map<std::string, std::pair<int, int>> botMovesValidValues;
     
     for (auto it = values.begin(); it != values.end(); ++it) {
         playerValidValues.emplace(it->first, it->second.first);
         botValidValues.emplace(it->first, it->second.second);
+        playerMovesValidValues.emplace(it->first, it->second.second);
+        botMovesValidValues.emplace(it->first, it->second.first);
     }
-    
-    std::vector<std::string> boards = {
-        "Ваша доска:                               Доска противника:     ",
-        "   A B C D E F G H I J                       A B C D E F G H I J",
-        " 1                                         1                    ",
-        " 2                                         2                    ",
-        " 3                                         3                    ",
-        " 4                                         4                    ",
-        " 5                                         5                    ",
-        " 6                                         6                    ",
-        " 7                                         7                    ",
-        " 8                                         8                    ",
-        " 9                                         9                    ",
-        "10                                        10                    "
-    };
     
     std::vector<std::pair<int, int>> playerMoves = {};
     
@@ -65,12 +71,14 @@ void jsonLoaderFunc() {
     json data;
     
     // добавление данных
-    data["values"] = values;
-    data["playerValidValues"] = playerValidValues;
-    data["botValidValues"] = botValidValues;
     for (const auto& row : boards) {
         data["boards"].push_back(row);
     }
+    data["values"] = values;
+    data["playerValidValues"] = playerValidValues;
+    data["botValidValues"] = botValidValues;
+    data["playerMovesValidValues"] = playerMovesValidValues;
+    data["botMovesValidValues"] = botMovesValidValues;
     data["playerMoves"] = playerMoves;
     data["botMoves"] = botMoves;
     
