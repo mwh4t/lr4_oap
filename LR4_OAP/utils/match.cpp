@@ -1,5 +1,7 @@
 #include "functions.hpp"
 
+bool isPlayerTurn = true;
+
 void playerMoveFunc() {
     /*
      функция для хода игрока
@@ -33,11 +35,14 @@ void playerMoveFunc() {
         if (std::find(botMoves.begin(), botMoves.end(), coordinates1) != botMoves.end()) {
             loadedBoard[row1][col1] = 'X';
             
+            botMoves.erase(std::remove(botMoves.begin(), botMoves.end(), coordinates1), botMoves.end());
+            
             loadedData["boards"].clear();
             
             for (const auto& row : loadedBoard) {
                 loadedData["boards"].push_back(row);
             }
+            loadedData["botMoves"] = botMoves;
             
             loadedData["playerMovesValidValues"].erase(value);
             
@@ -62,6 +67,7 @@ void playerMoveFunc() {
     } else {
         boardsFunc();
         std::cout << "\nНекорректный ход!" << std::endl;
+        isPlayerTurn = !isPlayerTurn;
     }
 }
 
@@ -72,6 +78,8 @@ void botMoveFunc() {
     json loadedData = jsonParserFunc();
     
     srand(static_cast<unsigned int>(time(nullptr)));
+    
+    std::cout << "\nХод бота...\n";
     
     int sec = 1000000;
     usleep(1 * sec);
@@ -100,11 +108,14 @@ void botMoveFunc() {
         if (std::find(playerMoves.begin(), playerMoves.end(), coordinates1) != playerMoves.end()) {
             loadedBoard[row1][col1] = 'X';
             
+            playerMoves.erase(std::remove(playerMoves.begin(), playerMoves.end(), coordinates1), playerMoves.end());
+            
             loadedData["boards"].clear();
             
             for (const auto& row : loadedBoard) {
                 loadedData["boards"].push_back(row);
             }
+            loadedData["playerMoves"] = playerMoves;
             
             loadedData["botMovesValidValues"].erase(value);
             
@@ -128,13 +139,11 @@ void botMoveFunc() {
         }
     } else {
         boardsFunc();
-        std::cout << "\nНекорректный ход!" << std::endl;
+        isPlayerTurn = !isPlayerTurn;
     }
 }
 
 void matchFunc() {
-    bool isPlayerTurn = true;
-    
     for (; true; ) {
         if (isPlayerTurn) {
             playerMoveFunc();
@@ -144,25 +153,18 @@ void matchFunc() {
         isPlayerTurn = !isPlayerTurn;
         
         json loadedData = jsonParserFunc();
-        std::vector<std::string> loadedBoard = loadedData["boards"].get<std::vector<std::string>>();
         
-        std::string boardSubstring1;
-        std::string boardSubstring2;
+        std::vector<std::pair<int, int>> botMoves = loadedData["botMoves"];
+        std::vector<std::pair<int, int>> playerMoves = loadedData["playerMoves"];
         
-        for (int i = 0; i < 11; i++) {
-            boardSubstring1 = loadedBoard[i].substr(0, 21);
-            auto count1 = std::count(boardSubstring1.begin(), boardSubstring1.end(), 'X');
-            if (count1 == 4) {
-                std::cout << "\nБот победил!\n";
-                return;
-            }
-            
-            boardSubstring2 = loadedBoard[i].substr(42, 21);
-            auto count2 = std::count(boardSubstring2.begin(), boardSubstring2.end(), 'X');
-            if (count2 == 4) {
-                std::cout << "\nВы победили!\n";
-                return;
-            }
+        if (botMoves.size() == 0) {
+            std::cout << "\nВы победили!\n";
+            return;
+        }
+        
+        if (playerMoves.size() == 0) {
+            std::cout << "\nБот победил!\n";
+            return;
         }
     }
 }

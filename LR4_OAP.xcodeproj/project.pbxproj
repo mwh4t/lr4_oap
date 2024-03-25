@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF08FB392B829B340046FCF1 /* placement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF08FB382B829B340046FCF1 /* placement.cpp */; };
-		AF0FFDD22B7F9D81007815B1 /* boards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF0FFDD02B7F9D81007815B1 /* boards.cpp */; };
 		AF5C8B0A2B8A8405000588E7 /* json_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF5C8B092B8A8405000588E7 /* json_loader.cpp */; };
 		AF5C8B0D2B8A9077000588E7 /* json_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF5C8B0B2B8A9077000588E7 /* json_handler.cpp */; };
 		AF774AC12B7B65E800D38258 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF774AC02B7B65E800D38258 /* main.cpp */; };
-		AF8282152B8D249700920D93 /* clear_screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF8282142B8D249700920D93 /* clear_screen.cpp */; };
 		AFEBC1BC2B966394005A8769 /* delete_cells.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFEBC1BB2B966394005A8769 /* delete_cells.cpp */; };
 		EC1FD31C2BA63616008BDCCC /* minor_funcs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1FD31B2BA63616008BDCCC /* minor_funcs.cpp */; };
 		EC5F12A92BA8A85E00BB5AF7 /* match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC5F12A82BA8A85E00BB5AF7 /* match.cpp */; };
@@ -32,13 +30,11 @@
 
 /* Begin PBXFileReference section */
 		AF08FB382B829B340046FCF1 /* placement.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = placement.cpp; sourceTree = "<group>"; };
-		AF0FFDD02B7F9D81007815B1 /* boards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = boards.cpp; sourceTree = "<group>"; };
 		AF0FFDD12B7F9D81007815B1 /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
 		AF5C8B092B8A8405000588E7 /* json_loader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = json_loader.cpp; sourceTree = "<group>"; };
 		AF5C8B0B2B8A9077000588E7 /* json_handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = json_handler.cpp; sourceTree = "<group>"; };
 		AF774ABD2B7B65E800D38258 /* LR4_OAP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LR4_OAP; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF774AC02B7B65E800D38258 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		AF8282142B8D249700920D93 /* clear_screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = clear_screen.cpp; sourceTree = "<group>"; };
 		AFA8A6982B83EA7A00A19CC7 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		AFA8A6992B83EAC400A19CC7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AFA8A69A2B83EB8800A19CC7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -65,8 +61,6 @@
 				AFA8A6972B83EA3600A19CC7 /* include */,
 				AF5C8B0E2B8A95AD000588E7 /* json */,
 				AF0FFDD12B7F9D81007815B1 /* functions.hpp */,
-				AF8282142B8D249700920D93 /* clear_screen.cpp */,
-				AF0FFDD02B7F9D81007815B1 /* boards.cpp */,
 				AF08FB382B829B340046FCF1 /* placement.cpp */,
 				AFEBC1BB2B966394005A8769 /* delete_cells.cpp */,
 				EC1FD31B2BA63616008BDCCC /* minor_funcs.cpp */,
@@ -183,10 +177,8 @@
 				AF5C8B0D2B8A9077000588E7 /* json_handler.cpp in Sources */,
 				AF774AC12B7B65E800D38258 /* main.cpp in Sources */,
 				EC1FD31C2BA63616008BDCCC /* minor_funcs.cpp in Sources */,
-				AF8282152B8D249700920D93 /* clear_screen.cpp in Sources */,
 				AFEBC1BC2B966394005A8769 /* delete_cells.cpp in Sources */,
 				AF08FB392B829B340046FCF1 /* placement.cpp in Sources */,
-				AF0FFDD22B7F9D81007815B1 /* boards.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

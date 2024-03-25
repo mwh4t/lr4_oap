@@ -1,5 +1,28 @@
 #include "functions.hpp"
 
+void clsFunc() {
+    /*
+     функция для очистки терминала
+     */
+    std::cout << std::string(50, '\n');
+}
+
+void boardsFunc() {
+    /*
+     функция для вывода досок в терминал
+     */
+    // парс данных из json
+    json loadedData = jsonParserFunc();
+    
+    // очистка терминала
+    clsFunc();
+    
+    // вывод данных
+    for (const auto& row : loadedData["boards"]) {
+        std::cout << row.get<std::string>() << std::endl;
+    }
+}
+
 void invalidDirection() {
     boardsFunc();
     std::cout << "\nНекорректное направление!" << std::endl;
